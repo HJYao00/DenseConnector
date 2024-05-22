@@ -11,7 +11,7 @@
 <img width="795" alt="image" src="images/teaser.jpg">
 </div>
 
-## 🗺️ Overview
+## Overview
 
 The Dense Connector utilizes multi-layer visual features to enhance visual representation and augment the visual perception capabilities of the Multimodal Large Language Models (MLLMs) which can be easily integrated into the current MLLMs. We provide three instantiation methods of Dense Connector: Sparse Token Integration (STI), Sparse Channel Integration (SCI), and Dense Channel Integration (DCI). The Dense Channel Integration achieves the best results.
 
@@ -58,7 +58,7 @@ Adjust values `--mm_dense_connector_type` and `--vision_tower` to modify the ins
 We employ DeepSpeed ZERO-2 for pre-training. Please execute the following command to train the Dense Connector on A100 GPUs:
 
 ```
-sh scripts/v1_5/vicuna_v1/pretrain.sh
+sh scripts/v1_5/pretrain.sh
 ```
 
 <details>
@@ -67,7 +67,7 @@ sh scripts/v1_5/vicuna_v1/pretrain.sh
 Please run the following command to train on V100 GPUs:
 
 ```
-sh scripts/v1_5/vicuna_v1/pretrain_v100.sh
+sh scripts/v1_5/pretrain_v100.sh
 ```
 
 </details>
@@ -78,11 +78,11 @@ We use DeepSpeed ZERO-3 for Visual Instruction Tuning. For the Hermes-2-Yi-34B a
 
 To full fine-tuning models for stage 2, you can run the following command:
 ```
-sh scripts/v1_5/vicuna_v1/train/finetune.sh
+sh scripts/v1_5/finetune.sh
 ```
 You can also refer to the following script to train the model using LoRA to reduce the training memory:
 ```
-sh scripts/v1_5/llama_3/train/finetune_lora.sh
+sh scripts/v1_5/finetune_lora.sh
 ```
 
 ## Evaluation
@@ -94,5 +94,7 @@ We also provide an evaluation example: if you wish to assess the performance of 
 sh scripts/v1_5/eval/gqa.sh
 ```
 
+## Acknowledgement
+We extend our gratitude to the open-source efforts of [LLaVA](https://github.com/haotian-liu/LLaVA) and [Mini-Gemini](https://github.com/dvlab-research/MGM/tree/main).
 
 

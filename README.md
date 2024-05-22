@@ -22,8 +22,6 @@ The Dense Connector utilizes multi-layer visual features to enhance visual repre
 ## Install
 Please follow the instructions below to install the required packages.
 
-NOTE: If you want to use the 2B version, please ensure to install the latest version Transformers (>=4.38.0).
-
 1. Clone this repository
 
 2. Install Package

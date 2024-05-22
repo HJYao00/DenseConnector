@@ -44,7 +44,9 @@ We utilize the publicly available datasets [LLaVA-1.5](https://github.com/haotia
 
 ## Train
 
-Our models are trained on 8 A100 GPUs with 80GB memory. To train on fewer GPUs, you can reduce the `per_device_train_batch_size` and increase the `gradient_accumulation_steps` accordingly. Always keep the global batch size the same: `per_device_train_batch_size` x `gradient_accumulation_steps` x `num_gpus`.
+We organize the training and testing scripts according to different `conv_templates/conv-mode`.
+
+To train on fewer GPUs, you can reduce the `per_device_train_batch_size` and increase the `gradient_accumulation_steps` accordingly. Always keep the global batch size the same: `per_device_train_batch_size` x `gradient_accumulation_steps` x `num_gpus`.
 
 Adjust values `--mm_dense_connector_type` and `--vision_tower` to modify the instantiation of the Dense Connector and visual encoder. For `--mm_dense_connector_type`, we support options 'sti', 'sci' and 'dci'. For `--vision_tower`, the available options are 'openai/clip-vit-large-patch14-336' and 'google/siglip-so400m-patch14-384'.
 
@@ -56,7 +58,7 @@ Adjust values `--mm_dense_connector_type` and `--vision_tower` to modify the ins
 We employ DeepSpeed ZERO-2 for pre-training. Please execute the following command to train the Dense Connector on A100 GPUs:
 
 ```
-sh scripts/v1_5/pretrain.sh
+sh scripts/v1_5/vicuna_v1/pretrain.sh
 ```
 
 <details>
@@ -65,7 +67,7 @@ sh scripts/v1_5/pretrain.sh
 Please run the following command to train on V100 GPUs:
 
 ```
-sh scripts/v1_5/pretrain_v100.sh
+sh scripts/v1_5/vicuna_v1/pretrain_v100.sh
 ```
 
 </details>
@@ -82,3 +84,15 @@ You can also refer to the following script to train the model using LoRA to redu
 ```
 sh scripts/v1_5/llama_3/train/finetune_lora.sh
 ```
+
+## Evaluation
+Our evaluation process is consistent with LLaVA. Detailed documentation can be referenced [here](https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md).
+
+We also provide an evaluation example: if you wish to assess the performance of the Vicuna-7B model on GQA, you can execute the following command:
+
+```
+sh scripts/v1_5/eval/gqa.sh
+```
+
+
+

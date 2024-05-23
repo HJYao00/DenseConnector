@@ -32,6 +32,9 @@
 - [Model Zoo](#model-zoo)
 - [Dataset Preparation & Training](#dataset-preparation-and-training)
 - [Evaluation](#evaluation)
+- [Demo setup](#demo-setup)
+  - [Gradio Web UI](#gradio-web-ui)
+  - [CLI Inference](#cli-inference)
 - [Citation](#citation)
 - [Acknowledgement](#acknowledgment)
 
@@ -75,10 +78,11 @@ Please refer to the [document](https://github.com/HJYao00/DenseConnector/blob/ma
 We evaluate the Dense Connector across 19 diverse benchmarks, including 11 image benchmarks and 8 video benchmarks. The testing procedures for both images and videos can be found [here](https://github.com/HJYao00/DenseConnector/blob/main/docs/Evaluation.md).
 
 ## Model Zoo
-Please visit our Model Zoo to access all publicly available Dense Connector checkpoints. We scale the LLM from 2.7B to 70B, incorporating the latest open-source large language model, Llama3-8B-Instruct & Llama3-70B-Instruct
+Please visit our Model Zoo to access all publicly available Dense Connector checkpoints. 
+We scale the LLM from 2.7B to 70B, incorporating the latest open-source large language model, Llama3-8B-Instruct & Llama3-70B-Instruct
+
 
 ## Citation
-
 
 ## Acknowledgment
 

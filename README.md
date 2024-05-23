@@ -30,6 +30,8 @@
 - [Overview](#overview)
 - [Installation](#installation)
 - [Model Zoo](#model-zoo)
+- [Dataset Preparation & Training](#dataset-preparation-and-training)
+- [Evaluation](#evaluation)
 - [Citation](#citation)
 - [Acknowledgement](#acknowledgment)
 
@@ -66,9 +68,18 @@ pip install ninja
 pip install flash-attn --no-build-isolation
 ```
 
-## Model Zoo
+## Dataset Preparation and Training
+Please refer to the [document](https://github.com/HJYao00/DenseConnector/blob/main/docs/Dataset_Training.md) for dataset preparation and training.
 
+## Evaluation
+We evaluate the Dense Connector across 19 diverse benchmarks, including 11 image benchmarks and 8 video benchmarks. The testing procedures for both images and videos can be found [here](https://github.com/HJYao00/DenseConnector/blob/main/docs/Evaluation.md).
+
+## Model Zoo
+Please visit our Model Zoo to access all publicly available Dense Connector checkpoints. We scale the LLM from 2.7B to 70B, incorporating the latest open-source large language model, Llama3-8B-Instruct & Llama3-70B-Instruct
 
 ## Citation
 
+
 ## Acknowledgment
+
+We extend our gratitude to the open-source efforts of [LLaVA](https://github.com/haotian-liu/LLaVA), [Mini-Gemini](https://github.com/dvlab-research/MGM) and [FreeVA](https://github.com/whwu95/FreeVA).

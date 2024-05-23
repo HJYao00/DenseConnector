@@ -1,21 +1,22 @@
 # Model Zoo
+Our plug-and-play Dense Connector module can be easily integrated into existing MLLMs. 
+We incorporate the Dense Connector into [Llava-1.5](https://github.com/haotian-liu/LLaVA) and [Mini-Gemini](https://github.com/dvlab-research/MGM) (MGM), with the models available below.
 
+## Base Method
 
-## XXX
-
-| Model | Vision Encoder | LLM | Checkpoint | SQA<sup>I</sup> | VQAv2 | GQA | VizWiz | MM-Bench | MM-Bench-CN |MM-Vet | MMMU | MathVista |LLaVA-Bench-Wild | MME | TextVQA | POPE 
-|----------|----------|----------|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Dense Connector | SigLip-SO | Phi2-2.7B | Coming Soon | 
-| Dense Connector | ViT-L/336 | Vicuna-7B | Coming Soon | 
-| Dense Connector | SigLip-SO | Vicuna-7B | Coming Soon | 
-| Dense Connector | SigLip-SO | Vicuna-13B | Coming Soon | 
-| Dense Connector | SigLip-SO | Llama3-8B-Instruct | Coming Soon | 
-| Dense Connector<sub>LoRa</sub> | SigLip-SO | Hermes-Yi-34B | Coming Soon | 
-| Dense Connector<sub>LoRa</sub> | SigLip-SO | Llama3-70B-Instruct | Coming Soon | 
+| Model | Data | Vision Encoder | LLM | Checkpoint | SQA<sup>I</sup> | VQAv2 | GQA | VizWiz | MM-Bench | MM-Bench-CN |MM-Vet | MMMU | MathVista |LLaVA-Bench-Wild | MME | TextVQA | POPE 
+|----------|----------|----------|----------|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Dense Connector | LLaVA-1.5 | SigLip-SO | Phi2-2.7B | Coming Soon | 
+| Dense Connector | LLaVA-1.5 | ViT-L/336 | Vicuna-7B | Coming Soon | 
+| Dense Connector | LLaVA-1.5 | SigLip-SO | Vicuna-7B | Coming Soon | 
+| Dense Connector | LLaVA-1.5 | SigLip-SO | Vicuna-13B | Coming Soon | 
+| Dense Connector | LLaVA-1.5 | SigLip-SO | Llama3-8B-Instruct | Coming Soon | 
+| Dense Connector<sub>LoRa</sub> | LLaVA-1.5 | SigLip-SO | Hermes-Yi-34B | Coming Soon | 
+| Dense Connector<sub>LoRa</sub> | LLaVA-1.5 | SigLip-SO | Llama3-70B-Instruct | Coming Soon | 
 
 
 ## Applying Dense Connector to Other Models
 
-| Model | Resolution | LLM | Checkpoint | SQA<sup>I</sup> | VQAv2 | GQA | VizWiz | MM-Bench | MM-Bench-CN |MM-Vet | MMMU | MathVista |LLaVA-Bench-Wild | MME | TextVQA | POPE 
-|----------|---|----------|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Dense Connector w/ [MGM](https://github.com/dvlab-research/MGM) | 336+768 | Vicuna-7B | Coming Soon | 
+| Model | Data | Resolution | LLM | Checkpoint | SQA<sup>I</sup> | VQAv2 | GQA | VizWiz | MM-Bench | MM-Bench-CN |MM-Vet | MMMU | MathVista |LLaVA-Bench-Wild | MME | TextVQA | POPE 
+|----------|---------|---------|----------|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Dense Connector w/ [MGM](https://github.com/dvlab-research/MGM) | MGM | 336+768 | Vicuna-7B | Coming Soon | 

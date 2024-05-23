@@ -2,6 +2,8 @@
 Our plug-and-play Dense Connector module can be easily integrated into existing MLLMs. 
 We incorporate the Dense Connector into [Llava-1.5](https://github.com/haotian-liu/LLaVA) and [Mini-Gemini](https://github.com/dvlab-research/MGM) (MGM), with the models available below.
 
+In Desnse connector, we evaluate our models across 19 diverse benchmarks, including 11 image benchmarks and 8 video benchmarks.
+
 ## Base Method
 
 | Model | Data | Vision Encoder | LLM | Checkpoint | SQA<sup>I</sup> | VQAv2 | GQA | VizWiz | MM-Bench | MM-Bench-CN |MM-Vet | MMMU | MathVista |LLaVA-Bench-Wild | MME | TextVQA | POPE 
@@ -20,3 +22,6 @@ We incorporate the Dense Connector into [Llava-1.5](https://github.com/haotian-l
 | Model | Data | Resolution | LLM | Checkpoint | SQA<sup>I</sup> | VQAv2 | GQA | VizWiz | MM-Bench | MM-Bench-CN |MM-Vet | MMMU | MathVista |LLaVA-Bench-Wild | MME | TextVQA | POPE 
 |----------|---------|---------|----------|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Dense Connector w/ [MGM](https://github.com/dvlab-research/MGM) | MGM | 336+768 | Vicuna-7B | Coming Soon | 
+
+
+## Video BenchMark

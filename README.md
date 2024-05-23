@@ -53,6 +53,10 @@ The Dense Connector utilizes multi-layer visual features to enhance visual repre
 Please follow the instructions below to install the required packages.
 
 1. Clone this repository
+```bash
+git clone https://github.com/HJYao00/DenseConnector.git
+cd DenseConnector
+```
 
 2. Install Package
 ```bash

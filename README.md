@@ -78,6 +78,13 @@ We evaluate the Dense Connector across 19 diverse benchmarks, including 11 image
 Please visit our [Model Zoo](https://github.com/HJYao00/DenseConnector/blob/main/docs/ModelZoo.md) to access all publicly available Dense Connector checkpoints. 
 We scale the LLM from 2.7B to 70B, incorporating the latest open-source large language model, Llama3-8B-Instruct & Llama3-70B-Instruct
 
+## Dialogue Example
+
+We provide several dialogue examples, with additional results available in the [paper]().
+
+<div align=center>
+<img width="530" alt="image" src="images/qualitative_results.jpg">
+</div>
 
 ## Citation
 If you find this repository is useful, please consider star🌟 this repo and cite🖇️ our paper.

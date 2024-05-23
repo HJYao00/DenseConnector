@@ -7,17 +7,17 @@
 <a href=''><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 <a href=''><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
 
-[Huanjin Yao<sup>*</sup>](),
-[Wenhao Wu<sup>*</sup>](),
+[Huanjin Yao<sup>*</sup>](https://scholar.google.com/citations?user=pDtsCBQAAAAJ&hl=zh-CN),
+[Wenhao Wu<sup>*</sup>](https://whwu95.github.io/),
 [Taojiannan Yang](),
 [Yuxin Song](),
 [Mengxi Zhang](),
 [Haocheng Feng](),
 [Yifan Sun](),
 
-[Zhiheng Li](),
-[Wanli Ouyang](),
-[Jingdong Wang](),
+[Zhiheng Li](https://www.sigs.tsinghua.edu.cn/lzh/main.htm),
+[Wanli Ouyang](https://wlouyang.github.io/),
+[Jingdong Wang](https://jingdongwang2017.github.io/),
 
 </h5>
 </div>
@@ -32,9 +32,6 @@
 - [Model Zoo](#model-zoo)
 - [Dataset Preparation & Training](#dataset-preparation-and-training)
 - [Evaluation](#evaluation)
-- [Demo setup](#demo-setup)
-  - [Gradio Web UI](#gradio-web-ui)
-  - [CLI Inference](#cli-inference)
 - [Citation](#citation)
 - [Acknowledgement](#acknowledgment)
 
@@ -78,11 +75,15 @@ Please refer to the [document](https://github.com/HJYao00/DenseConnector/blob/ma
 We evaluate the Dense Connector across 19 diverse benchmarks, including 11 image benchmarks and 8 video benchmarks. The testing procedures for both images and videos can be found [here](https://github.com/HJYao00/DenseConnector/blob/main/docs/Evaluation.md).
 
 ## Model Zoo
-Please visit our Model Zoo to access all publicly available Dense Connector checkpoints. 
+Please visit our [Model Zoo](https://github.com/HJYao00/DenseConnector/blob/main/docs/ModelZoo.md) to access all publicly available Dense Connector checkpoints. 
 We scale the LLM from 2.7B to 70B, incorporating the latest open-source large language model, Llama3-8B-Instruct & Llama3-70B-Instruct
 
 
 ## Citation
+If you find this repository is useful, please consider star🌟 this repo and cite🖇️ our paper.
+```bibtex
+
+```
 
 ## Acknowledgment
 

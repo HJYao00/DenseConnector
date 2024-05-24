@@ -5,7 +5,6 @@ import cv2
 import decord
 from decord import VideoReader, cpu
 # decord.bridge.set_bridge('torch')
-from transformers import AutoTokenizer, CLIPVisionModel, CLIPImageProcessor
 import torch
 
 
@@ -45,10 +44,6 @@ def load_video(vis_path, n_clips=1, num_frm=100):
 
     # Convert numpy arrays to PIL Image objects
     clip_imgs = [Image.fromarray(img_array[j]) for j in range(total_num_frm)]
-
-    for idx, img in enumerate(clip_imgs):
-        os.makedirs('./img/sample_demo_9', exist_ok = True) 
-        img.save(f'./img/sample_demo_9/{idx}.png')
 
     return clip_imgs, original_sizes
 

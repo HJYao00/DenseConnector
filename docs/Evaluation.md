@@ -24,7 +24,7 @@ Please note that if you want to evaluate the model on MMMU benchmark, you should
 Our video evaluation process is divided into two steps: the first step involves generating video prediction results using scripts from [here](https://github.com/HJYao00/DenseConnector/tree/main/scripts/v1_5/eval/video), and the second step involves evaluation on GPT-3.5 from [here](https://github.com/HJYao00/DenseConnector/tree/main/scripts/v1_5/eval/video/gpt_eval).
 
 For example, if you want to evaluate the model on MSVD-QA benchmark, you should follow these steps:
-### First Step: Generate the video predictions
+### First Step: Generate the Video Predictions
 
 Run the following command to generate video predictions:
 ```
@@ -36,8 +36,8 @@ We use the `--use_pool` option to reduce the number of tokens, allowing the Dens
 Moreover, the upper limit of frames T is determined by the `max_position_embeddings` of the large language model. For example, when using vit-L/336px with pooling (where each frame is downsampled by a factor of two), each frame results in 288 tokens. Therefore, the setting of T should satisfy T*288 < max_position_embeddings.
 
 
-### Second Step: 
-After generating video predictions, we evaluate them using gpt-3.5. The command is as follows:
+### Second Step: Evaluate the Results By GPT-3.5
+After generating video predictions, we evaluate them by GPT-3.5. The command is as follows:
 
 ```
 sh scripts/v1_5/eval/video/gpt_eval/eval_qa_msvd.sh

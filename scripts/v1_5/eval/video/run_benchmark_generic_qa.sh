@@ -4,7 +4,7 @@ model_path="./ckpt/DenseConnector-v1.5-7B"
 GPT_Zero_Shot_QA="./path_to_data/GPT_Zero_Shot_QA"
 video_dir="${GPT_Zero_Shot_QA}/VideoChatGPT_Test_Videos"
 gt_file="${GPT_Zero_Shot_QA}/generic_qa.json"
-output_dir="output/Benchmark_Generic_QA/${CKPT_NAME}_u${num_frames}FRS_Tcat_tk512_tem0_pool"
+output_dir="output/Benchmark_Generic_QA/${CKPT_NAME}_u${num_frames}FRS_pool"
 
 gpu_list="${CUDA_VISIBLE_DEVICES:-0}"
 IFS=',' read -ra GPULIST <<< "$gpu_list"

@@ -17,6 +17,28 @@ We also provide an evaluation example: if you wish to assess the performance of 
 sh scripts/v1_5/eval/gqa.sh
 ```
 
+Please note that if you want to evaluate the model on MMMU benchmark, you should first unzip the `dc/eval/MMMU.zip` file first.
 
 ## Evaluate on Video Benchmarks
-Coming Soon!
+
+Our video evaluation process is divided into two steps: the first step involves generating video prediction results using scripts from [here](https://github.com/HJYao00/DenseConnector/tree/main/scripts/v1_5/eval/video), and the second step involves evaluation on GPT-3.5.
+
+For example, if you want to evaluate the model on MSVD-QA benchmark, you should follow these steps:
+### First Step: Generate the video predictions
+
+Run the following command to generate video predictions:
+```
+sh scripts/v1_5/eval/video/run_qa_msvd.sh
+```
+
+We use the `--use_pool` option to reduce the number of tokens, allowing the Dense Connector to process more frames.
+
+Moreover, the upper limit of frames T is determined by the `max_position_embeddings` of the large language model. For example, when using vit-L/336px with pooling (where each frame is downsampled by a factor of two), each frame results in 288 tokens. Therefore, the setting of T should satisfy T*288 < max_position_embeddings.
+
+
+### Second Step: 
+After generating video predictions, we evaluate them using gpt-3.5-turbo-0125 for GPT assessment, noting that different GPT versions yield varying results.
+
+```
+sh scripts/v1_5/eval/video/gpt_eval/eval_qa_msvd.sh
+```

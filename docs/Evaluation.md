@@ -21,7 +21,7 @@ Please note that if you want to evaluate the model on MMMU benchmark, you should
 
 ## Evaluate on Video Benchmarks
 
-Our video evaluation process is divided into two steps: the first step involves generating video prediction results using scripts from [here](https://github.com/HJYao00/DenseConnector/tree/main/scripts/v1_5/eval/video), and the second step involves evaluation on GPT-3.5.
+Our video evaluation process is divided into two steps: the first step involves generating video prediction results using scripts from [here](https://github.com/HJYao00/DenseConnector/tree/main/scripts/v1_5/eval/video), and the second step involves evaluation on GPT-3.5 from [here](https://github.com/HJYao00/DenseConnector/tree/main/scripts/v1_5/eval/video/gpt_eval).
 
 For example, if you want to evaluate the model on MSVD-QA benchmark, you should follow these steps:
 ### First Step: Generate the video predictions
@@ -37,7 +37,7 @@ Moreover, the upper limit of frames T is determined by the `max_position_embeddi
 
 
 ### Second Step: 
-After generating video predictions, we evaluate them using gpt-3.5-turbo-0125 for GPT assessment, noting that different GPT versions yield varying results.
+After generating video predictions, we evaluate them using gpt-3.5. The command is as follows:
 
 ```
 sh scripts/v1_5/eval/video/gpt_eval/eval_qa_msvd.sh

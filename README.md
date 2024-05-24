@@ -5,7 +5,7 @@
 <h5 align="center"> 
 
 <a href='https://arxiv.org/abs/2405.13800'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
-<a href=''><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
+<a href='https://huggingface.co/collections/HuanjinYao/denseconnector-66500e173fc8c9f05dc98dea'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
 
 [Huanjin Yao<sup>*</sup>](https://scholar.google.com/citations?user=pDtsCBQAAAAJ&hl=zh-CN),
 [Wenhao Wu<sup>*</sup>](https://whwu95.github.io/),
@@ -23,7 +23,7 @@
 </div>
 
 ## News
-- [x] **[5/24]** We relase **Dense Connector** in [arxiv](https://arxiv.org/abs/2405.13800)! The code and model will be available soon.
+- [x] **[5/24]** We relase **Dense Connector** in [arxiv](https://arxiv.org/abs/2405.13800)! The code and [models](https://huggingface.co/collections/HuanjinYao/denseconnector-66500e173fc8c9f05dc98dea) are now open source!
 
 
 ## Contents

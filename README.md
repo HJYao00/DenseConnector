@@ -23,7 +23,7 @@
 </div>
 
 ## News
-- [x] **[5/24]** We relase **Dense Connector** in [arxiv](https://arxiv.org/abs/2405.13800)! The code and [models](https://huggingface.co/collections/HuanjinYao/denseconnector-66500e173fc8c9f05dc98dea) are now open source!
+- [x] **[5/24]** We relase **Dense Connector** in [arxiv](https://arxiv.org/abs/2405.13800)! The code and [models](https://github.com/HJYao00/DenseConnector/blob/main/docs/ModelZoo.md) are now open source!
 
 
 ## Contents

@@ -4,7 +4,7 @@
 
 <h5 align="center"> 
 
-<a href=''><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
+<a href='https://arxiv.org/abs/2405.13800'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 <a href=''><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
 
 [Huanjin Yao<sup>*</sup>](https://scholar.google.com/citations?user=pDtsCBQAAAAJ&hl=zh-CN),
@@ -23,7 +23,7 @@
 </div>
 
 ## News
-- [x] **[5/24]** We relase **Dense Connector** in [arxiv]()! The code and model will be available soon.
+- [x] **[5/24]** We relase **Dense Connector** in [arxiv](https://arxiv.org/abs/2405.13800)! The code and model will be available soon.
 
 
 ## Contents
@@ -85,7 +85,7 @@ We scale the LLM from 2.7B to 70B, incorporating the latest open-source large la
 
 ## Dialogue Example
 
-We provide several dialogue examples, with additional results available in the [paper]().
+We provide several dialogue examples, with additional results available in the [paper](https://arxiv.org/abs/2405.13800).
 
 <div align=center>
 <img width="530" alt="image" src="images/qualitative_results.jpg">
@@ -94,7 +94,14 @@ We provide several dialogue examples, with additional results available in the [
 ## Citation
 If you find this repository is useful, please consider star🌟 this repo and cite🖇️ our paper.
 ```bibtex
-
+@article{yao2024dense,
+      title={Dense Connector for MLLMs}, 
+      author={Huanjin Yao and Wenhao Wu and Taojiannan Yang and YuXin Song and Mengxi Zhang and Haocheng Feng and Yifan Sun and Zhiheng Li and Wanli Ouyang and Jingdong Wang},
+      year={2024},
+      eprint={2405.13800},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 ## Acknowledgment

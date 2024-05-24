@@ -38,6 +38,8 @@ class LlavaMetaModel:
             self.vision_tower = build_vision_tower(config, delay_load=True)
             self.mm_projector = build_vision_projector(config)
             self.avg_pooling_k8 = nn.AvgPool1d(kernel_size=8, stride=8)
+
+            self.config.is_video = False
             
 
     def get_vision_tower(self):
@@ -76,6 +78,7 @@ class LlavaMetaModel:
             self.config.mm_hidden_size = vision_tower.hidden_size * 3
         else:
             self.config.mm_hidden_size = vision_tower.hidden_size
+        self.config.is_video = False
         self.config.mm_vision_select_layer = mm_vision_select_layer
         self.config.mm_vision_select_feature = mm_vision_select_feature
 
@@ -98,7 +101,7 @@ class LlavaMetaModel:
             status = self.mm_projector.load_state_dict(get_w(mm_projector_weights, 'mm_projector'))
             print('proj', status)
             if status.unexpected_keys:
-                print(f"Unexpected Keys: {status.unexpected_keys}.\nThe Dense Connector weights are not loaded correctly.")
+                print(f"Unexpected Keys: {status.unexpected_keys}.\nThe Video-ChatGPT weights are not loaded correctly.")
             
 
 class LlavaMetaForCausalLM(ABC):
@@ -114,6 +117,22 @@ class LlavaMetaForCausalLM(ABC):
         if 'siglip' in self.get_model().vision_tower_name.lower():
             return True
         return False
+    
+    def temporal_aggregation(self, image_features):
+        # only supprt bs = 1
+        T, N, D = image_features.shape
+
+        if self.get_model().config.if_pool:
+            pool2 = nn.MaxPool1d(kernel_size=2, stride=2)
+            image_features = rearrange(image_features, 't n d -> t d n')
+            image_features = pool2(image_features)  # [t d n] -> [t d (n/2)]
+            image_features = rearrange(image_features, 't d n -> t n d', t=T)
+            image_features = image_features.view(-1, D) # [T*N D]
+        else:
+            image_features = image_features.view(T * N, D) # [T*N D]
+
+        image_features = image_features.unsqueeze(0)  # [1 T*N D]
+        return image_features
 
     def encode_images(self, images):
         image_features, image_forward_outs = self.get_model().get_vision_tower()(images)
@@ -123,6 +142,10 @@ class LlavaMetaForCausalLM(ABC):
             image_features = dense_connector(image_features, image_forward_outs, self.is_siglip(), self.get_model().config.mm_dense_connector_type)
 
         image_features = self.get_model().mm_projector(image_features)
+
+        if self.get_model().config.is_video:
+            image_features = self.temporal_aggregation(image_features)
+
         return image_features
 
     def prepare_inputs_labels_for_multimodal(
@@ -217,6 +240,8 @@ class LlavaMetaForCausalLM(ABC):
 
         # Truncate sequences to max length as image embeddings can make the sequence longer
         tokenizer_model_max_length = getattr(self.config, 'tokenizer_model_max_length', None)
+        if self.get_model().config.is_video:
+            tokenizer_model_max_length = getattr(self.config, 'max_position_embeddings', None)
         if tokenizer_model_max_length is not None:
             new_input_embeds = [x[:tokenizer_model_max_length] for x in new_input_embeds]
             new_labels = [x[:tokenizer_model_max_length] for x in new_labels]

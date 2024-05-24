@@ -7,38 +7,49 @@
 <a href='https://arxiv.org/abs/2405.13800'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 <a href='https://huggingface.co/collections/HuanjinYao/denseconnector-66500e173fc8c9f05dc98dea'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
 
-[Huanjin Yao<sup>*</sup>](https://scholar.google.com/citations?user=pDtsCBQAAAAJ&hl=zh-CN),
-[Wenhao Wu<sup>*</sup>](https://whwu95.github.io/),
-[Taojiannan Yang](),
-[Yuxin Song](),
-[Mengxi Zhang](https://scholar.google.com/citations?user=73tAoEAAAAAJ&hl=en),
-[Haocheng Feng](),
-[Yifan Sun](),
+[Huanjin Yao](https://scholar.google.com/citations?user=pDtsCBQAAAAJ&hl=zh-CN)<sup>1,3*</sup>,
+[Wenhao Wu](https://whwu95.github.io/)<sup>2*✉️</sup>,
+[Taojiannan Yang]()<sup>4</sup>,
+[Yuxin Song]()<sup>3</sup>,
+[Mengxi Zhang](https://scholar.google.com/citations?user=73tAoEAAAAAJ&hl=en)<sup>3</sup>,
+[Haocheng Feng]()<sup>3</sup>,
+[Yifan Sun]()<sup>3</sup>,
 
-[Zhiheng Li](https://www.sigs.tsinghua.edu.cn/lzh/main.htm),
-[Wanli Ouyang](https://wlouyang.github.io/),
-[Jingdong Wang](https://jingdongwang2017.github.io/),
+[Zhiheng Li](https://www.sigs.tsinghua.edu.cn/lzh/main.htm)<sup>1</sup>,
+[Wanli Ouyang](https://wlouyang.github.io/)<sup>5</sup>,
+[Jingdong Wang](https://jingdongwang2017.github.io/)<sup>3</sup>
+
+
+<sup>1</sup>[Tsinghua University](https://www.tsinghua.edu.cn/en/), <sup>2</sup>[The University of Sydney](https://www.sydney.edu.au/), <sup>3</sup>[Baidu](https://vis.baidu.com/#/), <sup>4</sup>[AWS AI Labs](https://aws.amazon.com/ai/), <sup>5</sup>[CUHK](https://www.cuhk.edu.hk/english/index.html#)
+
+<sup>*</sup>Equal Contribution,       <sup>✉️</sup>Corresponding Author
 
 </h5>
 </div>
 
-## News
-- [x] **[5/24]** We relase **Dense Connector** in [arxiv](https://arxiv.org/abs/2405.13800)! The code and [models](https://github.com/HJYao00/DenseConnector/blob/main/docs/ModelZoo.md) are now open source!
+***
+
+## News 
+- [x] **[2024/05/24]** Special thanks to [@_akhaliq](https://x.com/_akhaliq/status/1793863100002714003) for promptly sharing our work on Twitter! 
+- [x] **[2024/05/24]** We relase **Dense Connector** in [arxiv](https://arxiv.org/abs/2405.13800)! The code and [models](https://github.com/HJYao00/DenseConnector/blob/main/docs/ModelZoo.md) are now open source!
 
 
 ## Contents
+- [News](#news)
+- [Contents](#contents)
 - [Overview](#overview)
 - [Installation](#installation)
-- [Model Zoo](#model-zoo)
-- [Dataset Preparation & Training](#dataset-preparation-and-training)
+- [Dataset Preparation and Training](#dataset-preparation-and-training)
 - [Evaluation](#evaluation)
+- [Model Zoo](#model-zoo)
 - [Dialogue Example](#dialogue-example)
 - [Citation](#citation)
-- [Acknowledgement](#acknowledgment)
+- [Acknowledgment](#acknowledgment)
 
 
 ## Overview
 
+We introduce the Dense Connector - a simple, effective, and plug-and-play vision-language connector that significantly enhances existing MLLMs by leveraging multi-layer visual features, with minimal additional computational overhead! We hope that this work will provide valuable experience and serve as a basic module for future MLLM development!
 <div align=center>
 <img width="795" alt="image" src="images/teaser.jpg">
 </div>

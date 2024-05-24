@@ -5,7 +5,7 @@ GPT_Zero_Shot_QA="./path_to_data/GPT_Zero_Shot_QA"
 video_dir="${GPT_Zero_Shot_QA}/MSVD_Zero_Shot_QA/videos"
 gt_file_question="${GPT_Zero_Shot_QA}/MSVD_Zero_Shot_QA/test_q.json"
 gt_file_answers="${GPT_Zero_Shot_QA}/MSVD_Zero_Shot_QA/test_a.json"
-output_dir="output/MSVD_Zero_Shot_QA/${CKPT_NAME}_u${num_frames}FRS_D2_tk128_tem0_pool"
+output_dir="output/MSVD_Zero_Shot_QA/${CKPT_NAME}_u${num_frames}FRS_pool"
 
 gpu_list="${CUDA_VISIBLE_DEVICES:-0}"
 IFS=',' read -ra GPULIST <<< "$gpu_list"

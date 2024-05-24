@@ -14,8 +14,8 @@ The overall architecture consists of a visual encoder, Dense Connector, and LLM.
 |----------|----------|----------|----------|-----------|
 | Dense Connector | LLaVA-1.5 | SigLip-SO | Phi2-2.7B | Coming Soon |
 | Dense Connector | LLaVA-1.5 | ViT-L/336 | Vicuna-7B | Coming Soon |
-| Dense Connector | LLaVA-1.5 | SigLip-SO | Vicuna-7B | [CKPT](https://huggingface.co/HuanjinYao/DenseConnector-v1.5-7B) | 
-| Dense Connector | LLaVA-1.5 | SigLip-SO | Vicuna-13B | Coming Soon | 
+| Dense Connector | LLaVA-1.5 | SigLip-SO | Vicuna-7B | [CKPT_HF](https://huggingface.co/HuanjinYao/DenseConnector-v1.5-7B) | 
+| Dense Connector | LLaVA-1.5 | SigLip-SO | Vicuna-13B | [CKPT_HF](https://huggingface.co/HuanjinYao/DenseConnector-v1.5-8B) | 
 | Dense Connector | LLaVA-1.5 | SigLip-SO | Llama3-8B-Instruct | Coming Soon | 
 | Dense Connector<sub>LoRa</sub> | LLaVA-1.5 | SigLip-SO | Hermes-Yi-34B | Coming Soon | 
 | Dense Connector<sub>LoRa</sub> | LLaVA-1.5 | SigLip-SO | Llama3-70B-Instruct | Coming Soon |

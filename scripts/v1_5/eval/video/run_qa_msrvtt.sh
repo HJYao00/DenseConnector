@@ -5,7 +5,7 @@ GPT_Zero_Shot_QA="./path_to_data/GPT_Zero_Shot_QA"
 video_dir="${GPT_Zero_Shot_QA}/MSRVTT_Zero_Shot_QA/videos/all"
 gt_file_question="${GPT_Zero_Shot_QA}/MSRVTT_Zero_Shot_QA/test_q.json"
 gt_file_answers="${GPT_Zero_Shot_QA}/MSRVTT_Zero_Shot_QA/test_a.json"
-output_dir="output/MSRVTT_Zero_Shot_QA/${CKPT_NAME}_u${num_frames}FRS_D2_tk128_tem0_pool"
+output_dir="output/MSRVTT_Zero_Shot_QA/${CKPT_NAME}_u${num_frames}FRS_pool"
 
 
 gpu_list="${CUDA_VISIBLE_DEVICES:-0}"

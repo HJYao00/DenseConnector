@@ -1,4 +1,4 @@
-gpt_version="gpt-3.5-turbo-0301" #"gpt-3.5-turbo-0613" "gpt-3.5-turbo-0125"
+gpt_version="gpt-3.5-turbo-0125"
 output_name="llava-v1.5-7b_u4FRS"
 pred_path="MSRVTT_Zero_Shot_QA/${output_name}/merge.jsonl"
 output_dir="MSRVTT_Zero_Shot_QA/${output_name}/${gpt_version}"

@@ -1,5 +1,5 @@
 gpt_version="gpt-3.5-turbo-0125"
-output_name="llava-v1.5-7b_u4FRS"
+output_name="DenseConnector-v1.5-7B"
 pred_path="Activitynet_Zero_Shot_QA/${output_name}/merge.jsonl"
 output_dir="Activitynet_Zero_Shot_QA/${output_name}/${gpt_version}"
 output_json="Activitynet_Zero_Shot_QA/${output_name}/results_${gpt_version}.json"

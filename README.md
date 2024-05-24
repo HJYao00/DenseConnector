@@ -11,7 +11,7 @@
 [Wenhao Wu<sup>*</sup>](https://whwu95.github.io/),
 [Taojiannan Yang](),
 [Yuxin Song](),
-[Mengxi Zhang](),
+[Mengxi Zhang](https://scholar.google.com/citations?user=73tAoEAAAAAJ&hl=en),
 [Haocheng Feng](),
 [Yifan Sun](),
 

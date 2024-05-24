@@ -8,6 +8,8 @@ The models will be available soon.
 
 ## Base Method
 
+The overall architecture consists of a visual encoder, Dense Connector, and LLM.
+
 | Model | Data | Vision Encoder | LLM | Checkpoint 
 |----------|----------|----------|----------|-----------|
 | Dense Connector | LLaVA-1.5 | SigLip-SO | Phi2-2.7B | Coming Soon |

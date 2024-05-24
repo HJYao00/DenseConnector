@@ -17,7 +17,7 @@
 
 [Zhiheng Li](https://www.sigs.tsinghua.edu.cn/lzh/main.htm)<sup>1</sup>,
 [Wanli Ouyang](https://wlouyang.github.io/)<sup>5</sup>,
-[Jingdong Wang](https://jingdongwang2017.github.io/)<sup>1</sup>
+[Jingdong Wang](https://jingdongwang2017.github.io/)<sup>3</sup>
 
 
 <sup>1</sup>[Tsinghua University](https://www.tsinghua.edu.cn/en/), <sup>2</sup>[The University of Sydney](https://www.sydney.edu.au/), <sup>3</sup>[Baidu](https://vis.baidu.com/#/), <sup>4</sup>[AWS AI Labs](https://aws.amazon.com/ai/), <sup>5</sup>[CUHK](https://www.cuhk.edu.hk/english/index.html#)

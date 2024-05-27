@@ -27,11 +27,11 @@ def dense_connector_dci(image_features,image_forward_outs, is_siglip=True):
     image_features_2 = []
     if not is_siglip:
         for i in range(0, 12):
-            image_features_1.append(image_forward_outs.hidden_states[i][:, :].to(image_features.dtype))
+            image_features_1.append(image_forward_outs.hidden_states[i][:, 1:].to(image_features.dtype))
         image_features_1 = torch.stack(image_features_1, dim=0)
         image_features_1 = torch.sum(image_features_1, dim=0) / 12
         for i in range(12, 24):
-            image_features_2.append(image_forward_outs.hidden_states[i][:, :].to(image_features.dtype))
+            image_features_2.append(image_forward_outs.hidden_states[i][:, 1:].to(image_features.dtype))
         image_features_2 = torch.stack(image_features_2, dim=0)
         image_features_2 = torch.sum(image_features_2, dim=0) / 12
     else:

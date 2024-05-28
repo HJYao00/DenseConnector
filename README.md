@@ -2,7 +2,7 @@
 
 <h1> Dense Connector for MLLMs </h1>
 
-<h5 align="center"> 
+<h4 align="center"> 
 
 <a href='https://arxiv.org/abs/2405.13800'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 <a href='https://huggingface.co/collections/HuanjinYao/denseconnector-66500e173fc8c9f05dc98dea'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
@@ -25,7 +25,7 @@
 
 <sup>*</sup>Equal Contribution,       <sup>✉️</sup>Corresponding Author
 
-</h5>
+</h4>
 </div>
 
 ***
@@ -100,7 +100,7 @@ We scale the LLM from 2.7B to 70B, incorporating the latest open-source large la
 We provide several dialogue examples, with additional results available in the [paper](https://arxiv.org/abs/2405.13800).
 
 <div align=center>
-<img width="530" alt="image" src="images/qualitative_results.jpg">
+<img width="750" alt="image" src="images/qualitative_results.jpg">
 </div>
 
 ## Citation

@@ -107,12 +107,10 @@ We provide several dialogue examples, with additional results available in the [
 If you find this repository is useful, please consider star🌟 this repo and cite🖇️ our paper.
 ```bibtex
 @article{yao2024dense,
-      title={Dense Connector for MLLMs}, 
-      author={Huanjin Yao and Wenhao Wu and Taojiannan Yang and YuXin Song and Mengxi Zhang and Haocheng Feng and Yifan Sun and Zhiheng Li and Wanli Ouyang and Jingdong Wang},
-      year={2024},
-      eprint={2405.13800},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+  title={Dense Connector for MLLMs},
+  author={Yao, Huanjin and Wu, Wenhao and Yang, Taojiannan and Song, YuXin and Zhang, Mengxi and Feng, Haocheng and Sun, Yifan and Li, Zhiheng and Ouyang, Wanli and Wang, Jingdong},
+  journal={arXiv preprint arXiv:2405.13800},
+  year={2024}
 }
 ```
 

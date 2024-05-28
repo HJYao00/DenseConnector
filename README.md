@@ -2,7 +2,7 @@
 
 <h1> Dense Connector for MLLMs </h1>
 
-<h4 align="center"> 
+<h5 align="center"> 
 
 <a href='https://arxiv.org/abs/2405.13800'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 <a href='https://huggingface.co/collections/HuanjinYao/denseconnector-66500e173fc8c9f05dc98dea'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
@@ -25,7 +25,7 @@
 
 <sup>*</sup>Equal Contribution,       <sup>✉️</sup>Corresponding Author
 
-</h4>
+</h5>
 </div>
 
 ***

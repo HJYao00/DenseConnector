@@ -23,9 +23,9 @@ The overall architecture consists of a visual encoder, Dense Connector, and LLM.
 
 ## Applying Dense Connector to Other Models
 
-| Model | Data | Resolution | LLM | Checkpoint 
-|----------|---------|---------|----------|-----------
-| Dense Connector w/ [MGM](https://github.com/dvlab-research/MGM) | MGM | 336+768 | Vicuna-7B | [CKPT_HF](https://huggingface.co/HuanjinYao/DenseConnector-with-mgm-7B) | 
+| Model | Data | Vision Encoder | Resolution | LLM | Checkpoint 
+|----------|---------|---------|---------|----------|-----------
+| Dense Connector w/ [MGM](https://github.com/dvlab-research/MGM) | MGM | ViT-L/336 + ConvNext-L | 336+768 | Vicuna-7B | [CKPT_HF](https://huggingface.co/HuanjinYao/DenseConnector-with-mgm-7B) | 
 
 Please note that Dense Connector w/ MGM was trained based on the [MGM](https://github.com/dvlab-research/MGM) codebase. Please replace [mgm_arch.py](https://huggingface.co/HuanjinYao/DenseConnector-with-mgm-7B/blob/main/mgm_arch.py) in MGM to test our model.
 

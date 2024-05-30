@@ -33,6 +33,7 @@
 ***
 
 ## News 
+- [x] **[2024/05/30]** We thank [ZeroGPU org](https://huggingface.co/zero-gpu-explorers) and [Merve](https://huggingface.co/merve) for providing ZeroGPUs to help us build a [Space](https://huggingface.co/spaces/HuanjinYao/DenseConnector-v1.5-8B). Try it!
 - [x] **[2024/05/24]** Special thanks to [@_akhaliq](https://x.com/_akhaliq/status/1793863100002714003) for promptly sharing our work on Twitter! 
 - [x] **[2024/05/24]** We relase **Dense Connector** in [arxiv](https://arxiv.org/abs/2405.13800)! The code and [models](https://github.com/HJYao00/DenseConnector/blob/main/docs/ModelZoo.md) are now open source!
 

@@ -6,6 +6,15 @@ The models will be available soon.
 
 <!-- In Desnse connector, we evaluate our models across 19 diverse benchmarks, including 11 image benchmarks and 8 video benchmarks. -->
 
+<!--
+## LLaVA-NEXT
+| Model | Data | ViT | Resolution | LLM | Checkpoint | SQA<sup>I</sup> | VQAv2 | GQA | VizWiz | MM-Bench | MM-Bench-CN |MM-Vet | MMMU | MathVista |LLaVA-Bench-Wild | MME | TextVQA | POPE 
+|----------|---------|---------|---------|----------|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| LLaVA-NEXT | [LLaVA-NEXT](https://llava-vl.github.io/blog/2024-01-30-llava-next/) | CLIP-L/336px | 336x[(2,2),(1,2),(2,1),(1,3),(3,1)] | Vicuna-7B | |
+| Dense Connector | LLaVA-v1.5 | CLIP-L/336px | 336x[(2,2),(1,2),(2,1),(1,3),(3,1)] | Vicuna-7B | Coming Soon |
+| Dense Connector | LLaVA-v1.5 | SigLIP-so400m | 384x[(2,2),(1,2),(2,1),(1,3),(3,1)] | Vicuna-7B | Coming Soon |
+-->
+
 ## Base Method
 
 The overall architecture consists of a visual encoder, Dense Connector, and LLM.

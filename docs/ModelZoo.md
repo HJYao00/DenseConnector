@@ -4,12 +4,11 @@ We incorporate the Dense Connector into [Llava-1.5](https://github.com/haotian-l
 
 <!-- In Desnse connector, we evaluate our models across 19 diverse benchmarks, including 11 image benchmarks and 8 video benchmarks. -->
 
-<!--
-- [x] **[2024/06/18]** 🔥 **The Dense Connector with LLaVA-NeXT** is coming! By combining the Dense Connector with dynamic high-resolution (i.e., the AnyRes technology in LLaVA-NeXT), we have further enhanced model performance and demonstrated the broader application range of the Dense Connector. Using only the llava-1.5 dataset, the Dense Connector surpassed LLaVA-NeXT on several benchmarks. Check out its performance in the [Model Zoo](https://github.com/HJYao00/DenseConnector/blob/main/docs/ModelZoo.md)!
+
 ## 🔥 Dense Connector with LLaVA-NeXT (LLaVA-1.6)
 Recently, we combined the Dense Connector with a dynamic high-resolution approach (i.e., AnyRes in LLaVA-NeXT) to further explore its effectiveness in high-resolution scenarios. Using only the llava-1.5 dataset, the Dense Connector surpassed LLaVA-NeXT (LLaVA-1.6) on several benchmarks. 
 
-† indicates that the data has not been released yet.
+LLaVA-NeXT† dataset includes 558K pre-training data and 790K instruction-tuning data († indicates that the data has not been released yet). LLaVA-1.5 dataset consists of 558K pre-training data and 665K instruction-tuning data. MGM dataset contains 1.2M pre-training data and 1.5M instruction-tuning data.
 
 | Model | Data | Vision Encoder | Res. | LLM | Checkpoint | TextVQA | SQA<sup>I</sup>|  GQA  | LLaVA-Bench-Wild | MM-Bench | MM-Vet | MMMU | MathVista 
 |----------|---------|---------|---------|----------|:-----------:|---|---|---|---|---|---|---|---|
@@ -17,7 +16,7 @@ Recently, we combined the Dense Connector with a dynamic high-resolution approac
 | Dense Connector | LLaVA-1.5 | CLIP-L/336px | AnyRes | Vicuna-7B | Coming Soon | 65.6 | 70.5 | 64.6 | 66.9 | 67.4 | 33.7 | 37.6 | 26.2
 | Dense Connector | LLaVA-1.5 | SigLIP-so400m | AnyRes | Vicuna-7B | Coming Soon | 66.5 | 69.3 | 64.8 | 70.7 | 67.2 | 34.8 | 36.3| 27.0
 | Dense Connector | MGM | SigLIP-so400m | AnyRes | Vicuna-7B | Coming Soon | 70.0 | 72.0 | 63.9 | 88.8 | 69.2 | 44.4 | 35.8 | 32.7
--->
+
 
 ## Dense Connector with LLaVA-1.5
 
@@ -25,7 +24,7 @@ Here, we used llava-1.5 as our baseline, training the model with a fixed resolut
 
 | Model | Data | Vision Encoder | Res. | LLM | Checkpoint | TextVQA | SQA<sup>I</sup>|  GQA | LLaVA-Bench-Wild | MM-Bench | MM-Vet | MMMU | MathVista 
 |----------|----------|----------|----------|-----------|----------|---|---|---|---|---|---|---|---|
-| Baseline (LLaVA-1.5) | LLaVA-1.5 | ViT-L/336px | 336 | Vicuna-7B  | -- | 58.2 | 66.8 | 62.0 | 65.4 | 64.3 | 31.1 | 35.3* | 24.9*
+| Baseline ([LLaVA-1.5](https://arxiv.org/abs/2310.03744)) | LLaVA-1.5 | ViT-L/336px | 336 | Vicuna-7B  | -- | 58.2 | 66.8 | 62.0 | 65.4 | 64.3 | 31.1 | 35.3* | 24.9*
 | Dense Connector | LLaVA-1.5 | SigLIP-so400m | 384 | Phi2-2.7B | Coming Soon | 55.8 | 70.3 | 61.5 | 65.1 | 70.5 | 33.8 | 36.6 | 28.2
 | Dense Connector | LLaVA-1.5 | ViT-L/336px | 336 | Vicuna-7B | Coming Soon | 59.2 | 69.5 | 63.8 | 66.1 | 66.8 | 32.7 | 34.8 | 26.9
 | Dense Connector | LLaVA-1.5 | SigLIP-so400m | 384 | Vicuna-7B | [CKPT_HF](https://huggingface.co/HuanjinYao/DenseConnector-v1.5-7B) | 62.6 | 70.5 | 64.4 | 67.4 | 68.4 | 35.4 | 36.7  | 25.5

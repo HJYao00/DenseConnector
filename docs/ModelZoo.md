@@ -6,7 +6,7 @@ We incorporate the Dense Connector into [Llava-1.5](https://github.com/haotian-l
 
 
 ## 🔥 Dense Connector with LLaVA-NeXT (LLaVA-1.6)
-Recently, we combined the Dense Connector with a dynamic high-resolution approach (i.e., AnyRes in LLaVA-NeXT) to further explore its effectiveness in high-resolution scenarios. Using only the llava-1.5 dataset, the Dense Connector surpassed LLaVA-NeXT (LLaVA-1.6) on several benchmarks. 
+Recently, we combined the Dense Connector with a dynamic high-resolution approach (i.e., AnyRes in LLaVA-NeXT) to further explore its effectiveness in high-resolution scenarios. Using only the LLaVA-1.5 dataset, the Dense Connector surpassed LLaVA-NeXT (LLaVA-1.6) on several benchmarks. 
 
 > LLaVA-NeXT† dataset includes 558K pre-training data and 790K instruction-tuning data († indicates that the data has not been released yet).
 > LLaVA-1.5 dataset consists of 558K pre-training data and 665K instruction-tuning data.
@@ -15,7 +15,7 @@ Recently, we combined the Dense Connector with a dynamic high-resolution approac
 | Model | Data | Vision Encoder | Res. | LLM | Checkpoint | TextVQA | SQA<sup>I</sup>|  GQA  | LLaVA-Bench-Wild | MM-Bench | MM-Vet | MMMU | MathVista 
 |----------|---------|---------|---------|----------|:-----------:|---|---|---|---|---|---|---|---|
 | [LLaVA-NeXT](https://llava-vl.github.io/blog/2024-01-30-llava-next/) | LLaVA-NeXT† | CLIP-L/336px | AnyRes | Vicuna-7B | -- | 64.9 | 70.1 | 64.2 | 81.6 | 67.4 | 43.9 | 35.8 | 34.6
-| [LLaVA-NeXT](https://llava-vl.github.io/blog/2024-01-30-llava-next/) (Baseline) | LLaVA-1.5 | CLIP-L/336px | AnyRes | Vicuna-7B | -- | 64.5 | 69.5 | 64.0 | 68.2 | 67.5 | 33.1 | - | 25.7
+| [LLaVA-NeXT](https://llava-vl.github.io/blog/2024-01-30-llava-next/) (Baseline) | LLaVA-1.5 | CLIP-L/336px | AnyRes | Vicuna-7B | Coming Soon  | 64.5 | 69.5 | 64.0 | 68.2 | 67.5 | 33.1 | - | 25.7
 | Dense Connector | LLaVA-1.5 | CLIP-L/336px | AnyRes | Vicuna-7B | Coming Soon | 65.6 | 70.5 | 64.6 | 66.9 | 67.4 | 33.7 | 37.6 | 26.2
 | Dense Connector | LLaVA-1.5 | SigLIP-so400m | AnyRes | Vicuna-7B | Coming Soon | 66.5 | 69.3 | 64.8 | 70.7 | 67.2 | 34.8 | 36.3| 27.0
 | Dense Connector | MGM | SigLIP-so400m | AnyRes | Vicuna-7B | Coming Soon | 70.0 | 72.0 | 63.9 | 88.8 | 69.2 | 44.4 | 35.8 | 32.7

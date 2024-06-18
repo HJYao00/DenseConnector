@@ -101,7 +101,7 @@ class LlavaMetaModel:
             status = self.mm_projector.load_state_dict(get_w(mm_projector_weights, 'mm_projector'))
             print('proj', status)
             if status.unexpected_keys:
-                print(f"Unexpected Keys: {status.unexpected_keys}.\nThe Video-ChatGPT weights are not loaded correctly.")
+                print(f"Unexpected Keys: {status.unexpected_keys}.\nThe Dense Connector weights are not loaded correctly.")
             
 
 class LlavaMetaForCausalLM(ABC):

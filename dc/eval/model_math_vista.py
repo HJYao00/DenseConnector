@@ -104,7 +104,7 @@ def eval_model(args):
                                                                            load_8bit=args.load_8bit)
 
     questions = json.load(open(os.path.expanduser(args.question_file), "r"))
-    dataset = load_dataset('AI4Math/MathVista')['testmini']
+    dataset = load_dataset('AI4Math/MathVista', cache_dir='/ssd1/vis/wuwenhao/yaohuanjin/video_llm/cache_dir')['testmini']
     questions = [dict(pid=d['pid'], info=d) for d in dataset]
     # questions = [dict(pid=pid, info=qs) for pid, qs in questions.items()]
     questions = get_chunk(questions, args.num_chunks, args.chunk_idx)
@@ -149,6 +149,8 @@ def eval_model(args):
         if 'image' in info:
             image_file = info["image"]
             image = Image.open(os.path.join(args.image_folder, image_file))
+
+            image_size = image.size
             
             if hasattr(model.config, 'image_size_aux'):
                 if not hasattr(image_processor, 'image_size_raw'):
@@ -216,7 +218,7 @@ def eval_model(args):
             output_ids = model.generate(
                 input_ids,
                 images=images,
-                images_aux=images_aux,
+                image_sizes = [image_size],
                 do_sample=True if args.temperature > 0 else False,
                 temperature=args.temperature,
                 max_new_tokens=1024,

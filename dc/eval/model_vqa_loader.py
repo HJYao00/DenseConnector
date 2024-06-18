@@ -40,8 +40,6 @@ class CustomDataset(Dataset):
         line = self.questions[index]
         image_file = line["image"]
         qs = line["text"]
-        
-        # self.model_config.mm_use_im_start_end=False
         if self.model_config.mm_use_im_start_end:
             qs = DEFAULT_IM_START_TOKEN + DEFAULT_IMAGE_TOKEN + DEFAULT_IM_END_TOKEN + '\n' + qs
         else:
@@ -51,27 +49,30 @@ class CustomDataset(Dataset):
         conv.append_message(conv.roles[0], qs)
         conv.append_message(conv.roles[1], None)
         prompt = conv.get_prompt()
-        
-        # llama3 !!!!!
-        # prompt += '<|start_header_id|>assistant<|end_header_id|>\n\n'
-        # print([prompt])
 
         image = Image.open(os.path.join(self.image_folder, image_file)).convert('RGB')
         image_tensor = process_images([image], self.image_processor, self.model_config)[0]
 
         input_ids = tokenizer_image_token(prompt, self.tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt')
 
-        return input_ids, image_tensor
+        return input_ids, image_tensor, image.size
 
     def __len__(self):
         return len(self.questions)
+
+
+def collate_fn(batch):
+    input_ids, image_tensors, image_sizes = zip(*batch)
+    input_ids = torch.stack(input_ids, dim=0)
+    image_tensors = torch.stack(image_tensors, dim=0)
+    return input_ids, image_tensors, image_sizes
 
 
 # DataLoader
 def create_data_loader(questions, image_folder, tokenizer, image_processor, model_config, batch_size=1, num_workers=4):
     assert batch_size == 1, "batch_size must be 1"
     dataset = CustomDataset(questions, image_folder, tokenizer, image_processor, model_config)
-    data_loader = DataLoader(dataset, batch_size=batch_size, num_workers=num_workers, shuffle=False)
+    data_loader = DataLoader(dataset, batch_size=batch_size, num_workers=num_workers, shuffle=False, collate_fn=collate_fn)
     return data_loader
 
 
@@ -80,7 +81,7 @@ def eval_model(args):
     disable_torch_init()
     model_path = os.path.expanduser(args.model_path)
     model_name = get_model_name_from_path(model_path)
-    tokenizer, model, image_processor, context_len = load_pretrained_model(model_path, args.model_base, model_name, load_8bit=args.load_8bit)
+    tokenizer, model, image_processor, context_len = load_pretrained_model(model_path, args.model_base, model_name)
 
     terminators = [
             tokenizer.eos_token_id
@@ -94,19 +95,6 @@ def eval_model(args):
             tokenizer.convert_tokens_to_ids("<|eot_id|>")
         ]
 
-    if args.projection_path is not None and os.path.exists(args.projection_path):
-        print(f"Loading weights from {args.projection_path}")
-        status = model.load_state_dict(torch.load(args.projection_path, map_location='cpu'), strict=False)
-        if status.unexpected_keys:
-            print(f"Unexpected Keys: {status.unexpected_keys}.\nThe Video-ChatGPT weights are not loaded correctly.")
-        print(f"Weights loaded from {args.projection_path}")
-
-    for n, p in model.named_parameters():
-        if "model.local_enc.0.b1.conv1.conv.weight" in n:
-            print(p[:5, :1])
-            import time
-            time.sleep(20)
-
     questions = [json.loads(q) for q in open(os.path.expanduser(args.question_file), "r")]
     questions = get_chunk(questions, args.num_chunks, args.chunk_idx)
     answers_file = os.path.expanduser(args.answers_file)
@@ -119,30 +107,17 @@ def eval_model(args):
 
     data_loader = create_data_loader(questions, args.image_folder, tokenizer, image_processor, model.config)
 
-    for (input_ids, image_tensor), line in tqdm(zip(data_loader, questions), total=len(questions)):
+    for (input_ids, image_tensor, image_sizes), line in tqdm(zip(data_loader, questions), total=len(questions)):
         idx = line["question_id"]
         cur_prompt = line["text"]
 
         input_ids = input_ids.to(device='cuda', non_blocking=True)
-        # print(input_ids)
-
-        # terminators = [
-        # tokenizer.eos_token_id,
-        # tokenizer.convert_tokens_to_ids("<|eot_id|>")
-        # ]
 
         with torch.inference_mode():
-            # outputs_ = model.generate(
-            #     input_ids,
-            #     max_new_tokens=256,
-            #     eos_token_id=terminators,
-            #     do_sample=True,
-            #     temperature=0.6,
-            #     top_p=0.9,
-            # )
             output_ids = model.generate(
                 input_ids,
                 images=image_tensor.to(dtype=torch.float16, device='cuda', non_blocking=True),
+                image_sizes=image_sizes,
                 do_sample=True if args.temperature > 0 else False,
                 temperature=args.temperature,
                 eos_token_id=terminators,
@@ -151,15 +126,8 @@ def eval_model(args):
                 max_new_tokens=args.max_new_tokens,
                 use_cache=True)
 
-        
         outputs = tokenizer.batch_decode(output_ids, skip_special_tokens=True)[0].strip()
         # print(tokenizer.batch_decode(output_ids))
-        # input_token_len = input_ids.shape[1]
-        # n_diff_input_output = (input_ids != output_ids[:, :input_token_len]).sum().item()
-        # if n_diff_input_output > 0:
-        #     print(f'[Warning] {n_diff_input_output} output_ids are not the same as the input_ids')
-        # outputs = tokenizer.batch_decode(output_ids[:, input_token_len:], skip_special_tokens=True)[0]
-        # outputs = outputs.strip()
 
         ans_id = shortuuid.uuid()
         ans_file.write(json.dumps({"question_id": idx,
@@ -184,10 +152,7 @@ if __name__ == "__main__":
     parser.add_argument("--temperature", type=float, default=0.2)
     parser.add_argument("--top_p", type=float, default=None)
     parser.add_argument("--num_beams", type=int, default=1)
-    parser.add_argument('--load_8bit', type=bool, default=False)
-
     parser.add_argument("--max_new_tokens", type=int, default=128)
-    parser.add_argument("--projection_path", type=str, required=False)
     args = parser.parse_args()
 
     eval_model(args)

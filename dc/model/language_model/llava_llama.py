@@ -27,7 +27,6 @@ from transformers.generation.utils import GenerateOutput
 from ..llava_arch import LlavaMetaModel, LlavaMetaForCausalLM
 
 class LlavaConfig(LlamaConfig):
-    # model_type = "llava"
     model_type = "llava_llama"
 
 
@@ -66,6 +65,7 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
         output_attentions: Optional[bool] = None,
         output_hidden_states: Optional[bool] = None,
         images: Optional[torch.FloatTensor] = None,
+        image_sizes: Optional[List[List[int]]] = None,
         return_dict: Optional[bool] = None,
         cache_position=None,
     ) -> Union[Tuple, CausalLMOutputWithPast]:
@@ -84,7 +84,8 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
                 attention_mask,
                 past_key_values,
                 labels,
-                images
+                images,
+                image_sizes
             )
 
         return super().forward(
@@ -128,7 +129,7 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
                 None,
                 None,
                 images,
-                image_sizes=image_sizes,
+                image_sizes=image_sizes
             )
         else:
             inputs_embeds = self.get_model().embed_tokens(inputs)
@@ -140,15 +141,18 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
             **kwargs
         )
 
-    def prepare_inputs_for_generation(self, input_ids, past_key_values=None, inputs_embeds=None, **kwargs):
+    def prepare_inputs_for_generation(self, input_ids, past_key_values=None,
+                                      inputs_embeds=None, **kwargs):
         images = kwargs.pop("images", None)
-        _inputs = super().prepare_inputs_for_generation(
+        image_sizes = kwargs.pop("image_sizes", None)
+        inputs = super().prepare_inputs_for_generation(
             input_ids, past_key_values=past_key_values, inputs_embeds=inputs_embeds, **kwargs
         )
         if images is not None:
-            _inputs['images'] = images
-        return _inputs
+            inputs['images'] = images
+        if image_sizes is not None:
+            inputs['image_sizes'] = image_sizes
+        return inputs
 
-# AutoConfig.register("llava", LlavaConfig)
 AutoConfig.register("llava_llama", LlavaConfig)
 AutoModelForCausalLM.register(LlavaConfig, LlavaLlamaForCausalLM)

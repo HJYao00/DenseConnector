@@ -75,6 +75,10 @@ class CLIPVisionTower(nn.Module):
     @property
     def hidden_size(self):
         return self.config.hidden_size
+        
+    @property
+    def num_patches(self):
+        return (self.config.image_size // self.config.patch_size) ** 2
 
     @property
     def num_patches(self):

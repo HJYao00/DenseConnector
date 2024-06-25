@@ -19,6 +19,7 @@ Recently, we combined the Dense Connector with a dynamic high-resolution approac
 | Dense Connector | LLaVA-1.5 | CLIP-L/336px | AnyRes | Vicuna-7B | Coming Soon | 65.6 | 70.5 | 64.6 | 69.0 | 67.4 | 33.7 | 37.6 | 26.2
 | Dense Connector | LLaVA-1.5 | SigLIP-so400m | AnyRes | Vicuna-7B | [CKPT_HF](https://huggingface.co/HuanjinYao/DenseConnector-v1.5-SigLIP-7B-AnyRes/tree/main) | 66.5 | 69.3 | 64.8 | 70.7 | 67.2 | 34.8 | 36.3| 27.0
 | Dense Connector | MGM | SigLIP-so400m | AnyRes | Vicuna-7B | Coming Soon | 70.0 | 72.0 | 63.9 | 88.8 | 69.2 | 44.4 | 35.8 | 32.7
+| Dense Connector | MGM | SigLIP-so400m | AnyRes | Vicuna-13B | Coming Soon | 70.9 | 75.2 | 64.3 | 93.2 | 72.3 | 47.0 | 35.8 | 35.5
 
 
 ## Dense Connector with LLaVA-1.5

@@ -63,6 +63,7 @@ class ModelArguments:
     mm_use_im_patch_token: bool = field(default=True)
     mm_vision_select_feature: Optional[str] = field(default="patch")
     mm_dense_connector_type: Optional[str] = field(default='dci')
+    mm_patch_merge_type: Optional[str] = field(default='flat')
 
 
 @dataclass

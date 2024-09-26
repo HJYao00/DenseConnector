@@ -114,7 +114,7 @@ If you find this repository is useful, please consider star🌟 this repo and ci
 @article{yao2024dense,
   title={Dense Connector for MLLMs},
   author={Yao, Huanjin and Wu, Wenhao and Yang, Taojiannan and Song, YuXin and Zhang, Mengxi and Feng, Haocheng and Sun, Yifan and Li, Zhiheng and Ouyang, Wanli and Wang, Jingdong},
-  journal={arXiv preprint arXiv:2405.13800},
+  journal={Advances in Neural Information Processing Systems},
   year={2024}
 }
 ```

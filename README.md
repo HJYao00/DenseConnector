@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1> Dense Connector for MLLMs </h1>
+<h1> 【NeurIPS 2024】Dense Connector for MLLMs </h1>
 
 <h5 align="center"> 
 
@@ -33,6 +33,7 @@
 ***
 
 ## News 
+- [x] **[2024/09/26]** 🎉 Our Dense Connector has been accepted by NeurIPS-2024.
 - [x] **[2024/06/17]** 🔥 **The Dense Connector with LLaVA-NeXT** is coming! By combining the Dense Connector with dynamic high-resolution (i.e., the AnyRes technology in LLaVA-NeXT), we have further enhanced model performance and demonstrated the broader application range of the Dense Connector. Using only the llava-1.5 dataset, the Dense Connector surpassed LLaVA-NeXT on several benchmarks. Check out its performance in the [Model Zoo](https://github.com/HJYao00/DenseConnector/blob/main/docs/ModelZoo.md)! The eval code and model are released!
 - [x] **[2024/05/30]** We are grateful to [ZeroGPU org](https://huggingface.co/zero-gpu-explorers) and [Merve](https://huggingface.co/merve) for providing ZeroGPUs, which have enabled us to build a [Online Demo](https://huggingface.co/spaces/HuanjinYao/DenseConnector-v1.5-8B)!
 - [x] **[2024/05/24]** Special thanks to [@_akhaliq](https://x.com/_akhaliq/status/1793863100002714003) for promptly sharing our work on Twitter! 
